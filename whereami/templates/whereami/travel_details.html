@@ -1,0 +1,22 @@
+{% extends 'whereami/base.html' %}
+{% block title %}{{ object.title }}{% endblock title %}
+{% block content %}
+<div class="pure-g">
+    <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+        <div class="l-box">
+            <h1 class="text-box-head">{{ object.title }}</h1>
+            <p class="text-box-subhead">{{ object.description }}</p>
+        </div>
+    </div>
+    {% for trip in object.trips.all %}
+    <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+        <img class="image pure-img-responsive" src="{{ trip.photo.url }}" alt="travel">
+        <div class="overlay">
+            <div class="text">
+                <a href="">{{ trip.name }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

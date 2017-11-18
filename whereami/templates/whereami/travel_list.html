@@ -1,0 +1,21 @@
+{% extends 'whereami/base_list.html' %}
+{% block title %}anna & travels{% endblock title %}
+{% block h1 %}Where I am{% endblock h1 %}
+{% block h2 %}usually in Budapest...{% endblock h2 %}
+{% block inner %}
+<p>
+    But sometimes I like going away and try something else but usually I realize everything is the same everywhere...ok, somehow...
+</p>
+<div class="pure-g">
+    {% for travel in travels %}
+    <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+        <img class="image pure-img-responsive" src="{{ travel.photo.url }}" alt="travel">
+        <div class="overlay">
+            <div class="text">
+                <a href="{% url 'travel-details' travel.pk %}">{{ travel.title }}</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock inner %}

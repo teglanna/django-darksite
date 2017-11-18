@@ -1,0 +1,28 @@
+{% extends 'whereami/base_list.html' %}
+{% load static %}
+
+{% block title %}about anna{% endblock title %}
+{% block h1 %}Who I am{% endblock h1 %}
+{% block h2 %}Short intro{% endblock h2 %}
+{% block inner %}
+<p>
+    I'm Anna Téglássy
+    <img class="face" src="{% static 'images/anna.png' %}" alt="anna's face">
+    <img class="red-arrow" src="{% static 'images/arrow.png' %}">&nbsp;this is me (stoled from linkedin)
+</p>
+<p>
+    This year I reached the milestone thirty.
+    I'm working as a programmer for two years but I had graduated as a painter, which I like to mention.
+    So I had many different kind of jobs, and I have some travel experiences.
+    This site is created to show something about me, mostly through pictures but if you prefer I have some paper and writing about "bio".
+    Just keep it simple...
+</p>
+
+<h2 class="content-subhead">How to use this site</h2>
+<p>
+    Honestly this is a quite simple django-base website, a collection of my pre-life with many-many illustration photos.
+    Under "whereami" I put my favourite trips and experiences.
+    In the "artstuff" my art stuff are gathered.
+    About random? You will see...
+</p>
+{% endblock inner %}
