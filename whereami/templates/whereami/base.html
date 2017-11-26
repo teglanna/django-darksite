@@ -1,4 +1,5 @@
-{% load staticfiles %}
+{% load static %}
+{% load activeurl %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,20 +24,22 @@
 <div class="custom-wrapper pure-g" id="menu">
     <div class="pure-u-1 pure-u-md-1-2">
         <div class="pure-menu">
-            <a href="#" class="pure-menu-heading custom-brand"></a>
+            <a href="#" class="pure-menu-heading custom-brand">&nbsp;</a>
             <a href="#" class="custom-toggle" id="toggle"><s class="bar"></s><s class="bar"></s></a>
       </div>
     </div>
     <div class="pure-u-1 pure-u-md-1-2">
-        <div class="pure-menu pure-menu-horizontal custom-can-transform">
+        <nav class="pure-menu pure-menu-horizontal custom-can-transform">
+            {% activeurl %}
             <ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="{% url 'whoami-landing' %}" class="pure-menu-link">whoami</a></li>
-                <li class="pure-menu-item"><a href="{% url 'travel-list' %}" class="pure-menu-link">whereami</a></li>
-                <li class="pure-menu-item"><a href="{% url 'art-list' %}" class="pure-menu-link">artstuff</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">random</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">linkedin</a></li>
+                <li class="pure-menu-item"><a href="{% url 'whoami-landing' %}" class="pure-menu-link">whoami</a>
+                </li><li class="pure-menu-item"><a href="{% url 'travel-list' %}" class="pure-menu-link">whereami</a>
+                </li><li class="pure-menu-item"><a href="{% url 'art-list' %}" class="pure-menu-link">artstuff</a>
+                </li><li class="pure-menu-item"><a href="{% url 'random' %}" class="pure-menu-link">random</a>
+                </li><li class="pure-menu-item"><a href="http://linkedin.com/in/annateglassy/" class="pure-menu-link" target="blank">linkedin</a></li>
             </ul>
-        </div>
+            {% endactiveurl %}
+        </nav>
     </div>
 </div>
 

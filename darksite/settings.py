@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'whereami',
     'storages',
+    'django_activeurl',
 ]
 
 MIDDLEWARE = [
