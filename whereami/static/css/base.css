@@ -63,12 +63,9 @@ a {
     display: none;
   }
 
-  .photo-box, .text-box {
-    height: 30%;
-  }
-
+/* hack to keep transition */
   .custom-wrapper.open {
-    height: 20em;
+    height: 17em;
   }
 }
 
@@ -76,6 +73,11 @@ a {
   #menu {
     height: 35px;
   }
+
+  nav {
+    text-align: right;
+  }
+
   .pure-menu-link {
     padding: 7px 10px;
   }
@@ -87,4 +89,26 @@ a {
 
 .face {
   height: 80px;
+}
+
+.header h2 {
+  color: #888;
+}
+
+nav li.active {
+  background-color: #eee;
+}
+
+h1, h2 {
+  font-weight: 300;
+  color: #888;
+  margin-top: 20px;
+}
+
+.header h1 {
+  font-size: 2em;
+}
+
+.header {
+  padding: 0.5em;
 }
