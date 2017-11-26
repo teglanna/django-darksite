@@ -1,11 +1,13 @@
 {% extends 'whereami/base_list.html' %}
+{% load static %}
+
 {% block title %}anna & art{% endblock title %}
 {% block h1 %}About art{% endblock h1 %}
-{% block h2 %}and our relations...{% endblock h2 %}
-{% block inner %}
-<div class="pure-g">
+
+{% block main %}
+<div class="pure-g gallery">
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-        <img class="image pure-img-responsive" src="/static/painting.jpg" alt="painting">
+        <img class="image pure-img-responsive" src="{% static 'images/painting.jpg' %}" alt="painting">
         <div class="overlay">
             <div class="text">
                 <a href="{% url 'painting-list' %}">Hello paintings!</a>
@@ -13,27 +15,43 @@
         </div>
     </div>
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-        <img class="image pure-img-responsive" src="/static/lino.jpg" alt="painting">
+        <img class="image pure-img-responsive" src="{% static 'images/illustration.jpg' %}" alt="illustration">
         <div class="overlay">
             <div class="text">
-                <a href="{% url 'painting-list' %}">Hello paintings!</a>
+                <a href="{% url 'collage-list' %}">Hello illustrations!</a>
             </div>
         </div>
     </div>
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-        <img class="image pure-img-responsive" src="/static/collage.jpg" alt="painting">
+        <img class="image pure-img-responsive" src="{% static 'images/collage.jpg' %}" alt="collage">
         <div class="overlay">
             <div class="text">
-                <a href="{% url 'collage-list' %}">Hello coll!</a>
+                <a href="{% url 'collage-list' %}">Hello collages!</a>
             </div>
         </div>
     </div>
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-        <img class="image pure-img-responsive" src="/static/illustration.jpg" alt="painting">
+        <img class="image pure-img-responsive" src="{% static 'images/animation.jpg' %}" alt="animation">
         <div class="overlay">
             <div class="text">
-                <a href="{% url 'painting-list' %}">Hello paintings!</a>
+                <a href="{% url 'collage-list' %}">Hello animations!</a>
             </div>
         </div>
     </div>
-{% endblock inner %}
+    <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+        <img class="image pure-img-responsive" src="{% static 'images/lino.jpg' %}" alt="linocut">
+        <div class="overlay">
+            <div class="text">
+                <a href="{% url 'painting-list' %}">Hello linos!</a>
+            </div>
+        </div>
+    </div>
+    <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+        <img class="image pure-img-responsive" src="{% static 'images/installation.jpg' %}" alt="installation">
+        <div class="overlay">
+            <div class="text">
+                <a href="{% url 'collage-list' %}">Hello installations!</a>
+            </div>
+        </div>
+    </div>
+{% endblock main %}

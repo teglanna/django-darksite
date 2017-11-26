@@ -1,13 +1,8 @@
-{% extends 'whereami/base.html' %}
-{% block title %}{% endblock title %}
+{% extends 'whereami/base_list.html' %}
+
+{% block title %}anna & art{% endblock title %}
 {% block content %}
 <div class="pure-g" id="gallery">
-    <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
-        <div class="l-box">
-            <h1 class="text-box-head">{{ object.title }}</h1>
-            <p class="text-box-subhead">{{ object.description }}</p>
-        </div>
-    </div>
     {% for art in object_list %}
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
         <a href="{{ art.image.url }}" data-lightbox="category" data-title="{{art.title}}, {% if art.size %}{{art.size}}{% endif %}">    <img class="image pure-img-responsive" src="{{ art.image.url }}"/>
@@ -15,4 +10,4 @@
     </div>
     {% endfor %}
 </div>
-{% endblock %}
+{% endblock content %}
