@@ -2,21 +2,18 @@
 
 {% block title %}{{ object.title }}{% endblock title %}
 {% block content %}
-<div class="pure-g">
+<div class="pure-g" id="gallery">
     <div class="text-box pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
         <div class="l-box">
             <h1 class="text-box-head">{{ object.title }}</h1>
             <p class="text-box-subhead">{{ object.description }}</p>
         </div>
     </div>
-    {% for trip in object.trips.all %}
+    {% for travel_photo in object.images.all %}
     <div class="image-container photo-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-        <img class="image pure-img-responsive" src="{{ trip.photo.url }}" alt="travel">
-        <div class="overlay">
-            <div class="text">
-                <a href="">{{ trip.name }}</a>
-            </div>
-        </div>
+        <a href="{{ travel_photo.image.url }}" data-lightbox="{{ object.title }}" data-title="{{ travel_photo.title }}">
+        <img class="image pure-img-responsive" src="{{ travel_photo.image.url }}" alt="travel">
+        </a>
     </div>
     {% endfor %}
 </div>

@@ -76,3 +76,12 @@ class ArtObject(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class TravelPhoto(models.Model):
+    title = models.CharField('title', max_length=100)
+    travel = models.ForeignKey(Travel, related_name='images')
+    image = models.ImageField('image', upload_to='travel/details')
+
+    def __str__(self):
+        return self.title
